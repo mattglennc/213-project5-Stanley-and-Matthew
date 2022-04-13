@@ -33,7 +33,7 @@
                 android:layout_height="202dp"
                 android:backgroundTint="#00FFFFFF"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/donutButton" />
+                app:srcCompat="@drawable/donutbutton" />
 
             <ImageButton
                 android:id="@+id/imageButton3"
@@ -41,8 +41,8 @@
                 android:layout_height="203dp"
                 android:backgroundTint="#00FFFFFF"
                 android:scaleType="fitCenter"
-                android:translationY="2"
-                app:srcCompat="@drawable/coffeeButton" />
+                android:translationY="2dp"
+                app:srcCompat="@drawable/coffeebutton" />
         </TableRow>
 
         <TableRow
@@ -79,7 +79,7 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="#00FFFFFF"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/orderButton" />
+                app:srcCompat="@drawable/orderbutton" />
 
             <ImageButton
                 android:id="@+id/imageButton2"
@@ -87,7 +87,7 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="#00FFFFFF"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/storeButton" />
+                app:srcCompat="@drawable/storebutton" />
 
         </TableRow>
 
@@ -102,7 +102,7 @@
                 android:fontFamily="sans-serif-medium"
                 android:text=" YOUR  ORDER"
                 android:textSize="35sp"
-                android:translationX="50" />
+                android:translationX="50dp" />
 
             <TextView
                 android:id="@+id/textView"
