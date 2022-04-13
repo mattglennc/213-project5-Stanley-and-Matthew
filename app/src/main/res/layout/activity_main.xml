@@ -7,28 +7,113 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:layout_width="439dp"
-        android:layout_height="773dp"
-        android:background="#DABF96"
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:background="#A5935D"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="-3dp">
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp" >
 
         <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="102dp"
+            android:id="@+id/logo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
             android:text="RU CAFE"
-            android:textColor="#000000"
-            android:textSize="80sp"
-            android:translationX="60sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.843"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.058" />
+            android:textAlignment="center"
+            android:textSize="80sp" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="202dp">
+
+            <ImageButton
+                android:id="@+id/donutButton"
+                android:layout_width="205dp"
+                android:layout_height="202dp"
+                android:backgroundTint="#00FFFFFF"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/donutButton" />
+
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:layout_width="205dp"
+                android:layout_height="203dp"
+                android:backgroundTint="#00FFFFFF"
+                android:scaleType="fitCenter"
+                android:translationY="2"
+                app:srcCompat="@drawable/coffeeButton" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="57dp">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:text="DONUTS"
+                android:textSize="35sp"
+                android:translationX="35sp" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:text="COFFEE"
+                android:textSize="35sp"
+                android:translationX="105sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+
+            <ImageButton
+                android:id="@+id/orderButton"
+                android:layout_width="208dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#00FFFFFF"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/orderButton" />
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#00FFFFFF"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/storeButton" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="122dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:text=" YOUR  ORDER"
+                android:textSize="35sp"
+                android:translationX="50" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="146dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:text=" STORE ORDERS"
+                android:textSize="35sp"
+                android:translationX="116sp" />
+
+        </TableRow>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
