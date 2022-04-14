@@ -32,14 +32,16 @@
                 android:layout_width="205dp"
                 android:layout_height="202dp"
                 android:backgroundTint="#00FFFFFF"
+                android:onClick="donutActivity"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/donutbutton" />
 
             <ImageButton
-                android:id="@+id/imageButton3"
+                android:id="@+id/coffeeButton"
                 android:layout_width="205dp"
                 android:layout_height="203dp"
                 android:backgroundTint="#00FFFFFF"
+                android:onClick="coffeeActivity"
                 android:scaleType="fitCenter"
                 android:translationY="2dp"
                 app:srcCompat="@drawable/coffeebutton" />
@@ -78,16 +80,21 @@
                 android:layout_width="208dp"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#00FFFFFF"
+                android:onClick="orderActivity"
+
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/orderbutton" />
+                android:src="@drawable/order_button"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <ImageButton
-                android:id="@+id/imageButton2"
+                android:id="@+id/storeButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#00FFFFFF"
+                android:onClick="storeActivity"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/storebutton" />
+                android:src="@drawable/store_button" />
+
 
         </TableRow>
 
