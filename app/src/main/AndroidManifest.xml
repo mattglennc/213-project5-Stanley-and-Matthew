@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.213project5StanleyandMatthew">
+        <activity android:name=".OrderDonuts" />
+        <activity android:name=".OrderCoffee" />
+        <activity android:name=".CurrentOrder" />
+        <activity android:name=".OrdersList" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
