@@ -1,3 +1,33 @@
 <resources>
     <string name="app_name">213-project5-Stanley-and-Matthew</string>
+    <string-array name="itemPrices">
+        <item>1.59</item>
+        <item>1.59</item>
+        <item>1.59</item>
+        <item>1.59</item>
+        <item>1.59</item>
+        <item>1.59</item>
+        <item>1.59</item>
+        <item>1.79</item>
+        <item>1.79</item>
+        <item>1.79</item>
+        <item>0.39</item>
+        <item>0.39</item>
+        <item>0.39</item>
+    </string-array>
+    <string-array name="itemNames">
+        <item>Jelly</item>
+        <item>Glazed</item>
+        <item>Chocolate Frosted</item>
+        <item>Strawberry Frosted</item>
+        <item>Sugar</item>
+        <item>Lemon-filled</item>
+        <item>Boston Cream</item>
+        <item>Cinnamon Sugar</item>
+        <item>Blueberry</item>
+        <item>Old Fashion</item>
+        <item>Glazed Holes</item>
+        <item>Cinnamon Sugar Holes</item>
+        <item>Jelly Holes</item>
+    </string-array>
 </resources>

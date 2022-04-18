@@ -9,6 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.213project5StanleyandMatthew">
+        <activity
+            android:name=".ItemSelectedActivity"
+            android:label="Item Selected Activity"
+            android:parentActivityName=".OrderCoffee"
+            android:exported="false" />
         <activity android:name=".OrderDonuts" />
         <activity android:name=".OrderCoffee" />
         <activity android:name=".CurrentOrder" />
