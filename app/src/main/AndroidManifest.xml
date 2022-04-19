@@ -5,19 +5,23 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="RU CAFE"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.213project5StanleyandMatthew">
         <activity
             android:name=".ItemSelectedActivity"
-            android:label="Item Selected Activity"
+            android:label="Order Donuts"
             android:parentActivityName=".OrderCoffee"
             android:exported="false" />
-        <activity android:name=".OrderDonuts" />
-        <activity android:name=".OrderCoffee" />
-        <activity android:name=".CurrentOrder" />
-        <activity android:name=".OrdersList" />
+        <activity android:name=".OrderDonuts"
+            android:label="Donuts"/>
+        <activity android:name=".OrderCoffee"
+            android:label="Coffee"/>
+        <activity android:name=".CurrentOrder"
+            android:label="Your Order"/>
+        <activity android:name=".OrdersList"
+            android:label="Store Orders"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
