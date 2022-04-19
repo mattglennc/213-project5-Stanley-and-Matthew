@@ -15,6 +15,12 @@
         <item>0.39</item>
         <item>0.39</item>
     </string-array>
+    <string-array name="sizes">
+        <item>Short</item>
+        <item>Tall</item>
+        <item>Grande</item>
+        <item>Venti</item>
+    </string-array>
     <string-array name="quantities">
         <item>1</item>
         <item>2</item>

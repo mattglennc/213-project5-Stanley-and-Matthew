@@ -41,7 +41,8 @@
                 android:id="@+id/quantSelect"
                 android:layout_width="92dp"
                 android:layout_height="38dp"
-                android:background="#F3F3F3"
+                android:background="#FFFFFF"
+                android:backgroundTintMode="add"
                 android:translationX="10dp" />
         </TableRow>
 

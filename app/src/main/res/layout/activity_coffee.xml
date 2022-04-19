@@ -86,7 +86,8 @@
                 android:id="@+id/quantCoffeeSelect"
                 android:layout_width="159dp"
                 android:layout_height="35dp"
-                android:background="#F4F0F0"
+                android:background="#FFFFFF"
+                android:backgroundTintMode="src_atop"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/sizeSelect"
@@ -97,10 +98,11 @@
                 android:id="@+id/sizeSelect"
                 android:layout_width="159dp"
                 android:layout_height="35dp"
+                android:layout_marginStart="32dp"
                 android:background="#F4F0F0"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:layout_editor_absoluteX="37dp" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </TableRow>
