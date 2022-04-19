@@ -6,14 +6,64 @@
     android:layout_height="match_parent"
     tools:context=".ItemSelectedActivity">
 
-    <Button
-        android:id="@+id/btn1"
-        android:layout_width="400dp"
-        android:layout_height="95dp"
-        android:layout_marginTop="292dp"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:background="#A5935D"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <ImageView
+            android:id="@+id/donutImage"
+            android:layout_width="match_parent"
+            android:layout_height="228dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/donuts" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="41dp" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="155dp">
+
+            <TextView
+                android:id="@+id/donutLabel"
+                android:layout_width="248dp"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textSize="28sp"
+                android:translationX="10dp" />
+
+            <Spinner
+                android:id="@+id/quantSelect"
+                android:layout_width="92dp"
+                android:layout_height="38dp"
+                android:background="#F3F3F3"
+                android:translationX="10dp" />
+        </TableRow>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="371dp"
+            android:layout_height="90dp"
+            android:translationX="20sp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="372dp"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:hint="subtotal"
+                android:translationX="0sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn1"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:focusable="auto"
+            android:text="Add to Order" />
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

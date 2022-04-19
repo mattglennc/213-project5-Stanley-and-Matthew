@@ -99,14 +99,7 @@ class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsHolder>{
             /* set onClickListener for the row layout,
              * clicking on a row will navigate to another Activity
              */
-            parentLayout.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(itemView.getContext(), com.example.a213_project5_stanley_and_matthew.ItemSelectedActivity.class);
-                    intent.putExtra("ITEM", tv_name.getText());
-                    itemView.getContext().startActivity(intent);
-                }
-            });
+
         }
 
         /**
@@ -118,24 +111,10 @@ class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsHolder>{
             btn_add.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    AlertDialog.Builder alert = new AlertDialog.Builder(itemView.getContext());
-                    alert.setTitle("Add to order");
-                    alert.setMessage(tv_name.getText().toString());
-                    //handle the "YES" click
-                    alert.setPositiveButton("yes", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            Toast.makeText(itemView.getContext(),
-                                    tv_name.getText().toString() + " added.", Toast.LENGTH_LONG).show();
-                        }
-                        //handle the "NO" click
-                    }).setNegativeButton("no", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            Toast.makeText(itemView.getContext(),
-                                    tv_name.getText().toString() + " not added.", Toast.LENGTH_LONG).show();
-                        }
-                    });
-                    AlertDialog dialog = alert.create();
-                    dialog.show();
+                    Intent intent = new Intent(itemView.getContext(), com.example.a213_project5_stanley_and_matthew.ItemSelectedActivity.class);
+                    intent.putExtra("ITEM", tv_name.getText());
+                    System.out.println(im_item.getImageAlpha());
+                    itemView.getContext().startActivity(intent);
                 }
             });
         }
