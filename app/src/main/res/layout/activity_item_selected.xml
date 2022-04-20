@@ -52,6 +52,7 @@
             android:translationX="20sp">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/donutSubtotal"
                 android:layout_width="372dp"
                 android:layout_height="wrap_content"
                 android:enabled="false"
