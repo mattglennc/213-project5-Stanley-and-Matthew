@@ -54,8 +54,8 @@
 
             <ListView
                 android:id="@+id/ordersList"
-                android:layout_width="332dp"
-                android:layout_height="460dp"
+                android:layout_width="336dp"
+                android:layout_height="327dp"
                 android:layout_marginBottom="32dp"
                 android:background="#DDD3D3"
                 app:layout_constraintBottom_toBottomOf="parent"
