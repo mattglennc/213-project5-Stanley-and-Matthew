@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -13,6 +14,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.textfield.TextInputEditText;
 
 /**
  * For demonstration purpose, this class is the Activity to be started when an item on the
@@ -26,6 +29,8 @@ public class ItemSelectedActivity extends AppCompatActivity {
     private Spinner quantSelect;
     private String [] quantities;
     private ArrayAdapter<String> adapter;
+    private TextInputEditText donutSubtotal;
+    private Donut tempDonut;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +42,15 @@ public class ItemSelectedActivity extends AppCompatActivity {
         quantities = getResources().getStringArray(R.array.quantities);
         adapter = new ArrayAdapter<String>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, quantities);
         quantSelect.setAdapter(adapter);
+        donutSubtotal = findViewById(R.id.donutSubtotal);
         Intent intent = getIntent();
-        donutLabel.setText(intent.getStringExtra("ITEM"));
+        String flavor = intent.getStringExtra("ITEM");
+        donutLabel.setText(flavor);
+        String price =intent.getStringExtra("PRICE");
+        tempDonut = new Donut(flavor,1,Double.parseDouble(price));
+        price =getResources().getString(R.string.dollarSign) + price;
+        donutSubtotal.setText(price);
+
         btn_itemName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -60,6 +72,21 @@ public class ItemSelectedActivity extends AppCompatActivity {
                 });
                 AlertDialog dialog = alert.create();
                 dialog.show();
+            }
+        });
+
+        quantSelect.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                int quantity = Integer.parseInt(adapterView.getSelectedItem().toString());
+                tempDonut.update(quantity - tempDonut.getQuantity());
+                String newPrice = getResources().getString(R.string.dollarSign) + String.format("%.2f",tempDonut.getTotalPrice());
+                donutSubtotal.setText(newPrice);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                donutSubtotal.setText("");
             }
         });
     }

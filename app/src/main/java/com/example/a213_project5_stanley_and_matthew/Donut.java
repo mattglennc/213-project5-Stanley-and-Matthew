@@ -12,12 +12,14 @@ public class Donut extends MenuItem {
 
     /**
      * Constructor to create an instance of the Donut object.
-     * @param flavor String field which holds the Donut flavor, inherited from the MenuItem class.
+     * @param flavor String field which holds the Donut flavor.
      * @param quantity Integer field which holds the quantity for this instance, inherited from the MenuItem class.
+     * @param price Double field which holds the individual price of this instance.
      */
-    public Donut(String flavor, int quantity) {
+    public Donut(String flavor, int quantity, double price) {
         super(quantity);
         this.flavor = flavor;
+        super.setTotalPrice(price);
     }
 
     /**
@@ -27,7 +29,7 @@ public class Donut extends MenuItem {
      */
     @Override
     public double itemPrice() {
-        return 0;
+        return super.getTotalPrice();
     }
 
     /**
@@ -42,14 +44,6 @@ public class Donut extends MenuItem {
             return d.flavor.equals(this.flavor);
         }
         return false;
-    }
-
-    /**
-     * Returns the String representation of Donut instance, but with only the flavor and quantity.
-     * @return
-     */
-    public String toSubString() {
-        return this.flavor + super.toString();
     }
 
     /**

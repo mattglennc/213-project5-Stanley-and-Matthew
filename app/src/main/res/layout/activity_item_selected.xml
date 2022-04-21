@@ -44,6 +44,7 @@
                 android:background="#FFFFFF"
                 android:backgroundTintMode="add"
                 android:translationX="10dp" />
+
         </TableRow>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -55,7 +56,7 @@
                 android:id="@+id/donutSubtotal"
                 android:layout_width="372dp"
                 android:layout_height="wrap_content"
-                android:enabled="false"
+                android:editable="false"
                 android:hint="subtotal"
                 android:translationX="0sp" />
         </com.google.android.material.textfield.TextInputLayout>

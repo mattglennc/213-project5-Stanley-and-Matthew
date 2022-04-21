@@ -113,6 +113,7 @@ class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsHolder>{
                 public void onClick(View view) {
                     Intent intent = new Intent(itemView.getContext(), com.example.a213_project5_stanley_and_matthew.ItemSelectedActivity.class);
                     intent.putExtra("ITEM", tv_name.getText());
+                    intent.putExtra("PRICE", tv_price.getText());
                     System.out.println(im_item.getImageAlpha());
                     itemView.getContext().startActivity(intent);
                 }
