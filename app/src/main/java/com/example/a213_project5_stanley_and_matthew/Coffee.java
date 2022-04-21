@@ -56,6 +56,7 @@ public class Coffee extends MenuItem implements Customizable {
     public void setSize(String size){
         this.size = getSizeInt(size);
         this.sizeString = size;
+        super.setTotalPrice(this.itemPrice());
     }
 
 
@@ -74,16 +75,16 @@ public class Coffee extends MenuItem implements Customizable {
      * @return Integer corresponding to String size. (0,1,2,3)
      */
     private int getSizeInt(String size){
-        if(size == ("Short")){
+        if(size.equals("Short")){
             return 0;
         }
-        else if (size == ("Tall")){
+        else if (size.equals("Tall")){
             return 1;
         }
-        else if (size == ("Grande")){
+        else if (size.equals("Grande")){
             return GRANDE;
         }
-        else if (size == ("Venti")){
+        else if (size.equals("Venti")){
             return VENTI;
         }
         return 0;

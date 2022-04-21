@@ -118,10 +118,9 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayout"
-                android:layout_width="147dp"
-                android:layout_height="47dp"
+                android:layout_width="168dp"
+                android:layout_height="57dp"
                 android:layout_marginStart="24dp"
-                android:enabled="false"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -130,6 +129,7 @@
                     android:id="@+id/subtotalCoffee"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:editable="false"
                     android:hint="subtotal" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -137,13 +137,13 @@
                 android:id="@+id/orderCoffeeButton"
                 android:layout_width="158dp"
                 android:layout_height="51dp"
-                android:layout_marginStart="50dp"
                 android:text="Add to Order"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.573"
                 app:layout_constraintStart_toEndOf="@+id/textInputLayout"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.45" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </TableRow>
 
