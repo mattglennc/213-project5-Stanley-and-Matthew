@@ -55,19 +55,19 @@ public class ItemSelectedActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder alert = new AlertDialog.Builder(view.getContext());
-                alert.setTitle("Add item to order?");
-                alert.setMessage(donutLabel.getText().toString());
+                alert.setTitle(getResources().getString(R.string.addPrompt));
+                alert.setMessage(tempDonut.toString());
                 //handle the "YES" click
                 alert.setPositiveButton("yes", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         Toast.makeText(view.getContext(),
-                                donutLabel.getText().toString() + " added.", Toast.LENGTH_LONG).show();
+                                getResources().getString(R.string.added), Toast.LENGTH_LONG).show();
                     }
                     //handle the "NO" click
                 }).setNegativeButton("no", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         Toast.makeText(view.getContext(),
-                                donutLabel.getText().toString() + " not added.", Toast.LENGTH_LONG).show();
+                                getResources().getString(R.string.notAdded), Toast.LENGTH_LONG).show();
                     }
                 });
                 AlertDialog dialog = alert.create();

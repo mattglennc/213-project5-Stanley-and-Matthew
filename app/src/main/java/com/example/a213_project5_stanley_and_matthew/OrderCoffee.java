@@ -62,19 +62,19 @@ public class OrderCoffee extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder alert = new AlertDialog.Builder(view.getContext());
-                alert.setTitle("Add item to order?");
-                alert.setMessage("Insert Coffee toString() here.");
+                alert.setTitle(getResources().getString(R.string.addPrompt));
+                alert.setMessage(tempCoffee.toString());
                 //handle the "YES" click
                 alert.setPositiveButton("yes", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         Toast.makeText(view.getContext(),
-                                "Insert Coffee toString() here." + " added.", Toast.LENGTH_LONG).show();
+                                getResources().getString(R.string.added), Toast.LENGTH_LONG).show();
                     }
                     //handle the "NO" click
                 }).setNegativeButton("no", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         Toast.makeText(view.getContext(),
-                                "Insert Coffee toString() here." + " not added.", Toast.LENGTH_LONG).show();
+                                getResources().getString(R.string.notAdded), Toast.LENGTH_LONG).show();
                     }
                 });
                 AlertDialog dialog = alert.create();

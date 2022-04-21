@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">213-project5-Stanley-and-Matthew</string>
     <string name="dollarSign">$</string>
+    <string name="added">Item added to order.</string>
+    <string name="notAdded">Item not added to order.</string>
+    <string name="addPrompt">Add item to order?</string>
+    <string name="placeOrder">Order has been placed.</string>
     <string-array name="itemPrices">
         <item>1.59</item>
         <item>1.59</item>
