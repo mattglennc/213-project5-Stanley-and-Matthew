@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,7 +23,7 @@ import com.google.android.material.textfield.TextInputEditText;
  * @author Lily Chang
  */
 public class ItemSelectedActivity extends AppCompatActivity {
-    private Button btn_itemName;
+    private Button addToOrder;
     private TextView donutLabel;
     private Spinner quantSelect;
     private String [] quantities;
@@ -32,11 +31,12 @@ public class ItemSelectedActivity extends AppCompatActivity {
     private TextInputEditText donutSubtotal;
     private Donut tempDonut;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_selected);
-        btn_itemName = findViewById(R.id.btn1);
+        addToOrder = findViewById(R.id.addToOrder);
         donutLabel = findViewById(R.id.donutLabel);
         quantSelect = findViewById(R.id.quantSelect);
         quantities = getResources().getStringArray(R.array.quantities);
@@ -51,7 +51,7 @@ public class ItemSelectedActivity extends AppCompatActivity {
         price =getResources().getString(R.string.dollarSign) + price;
         donutSubtotal.setText(price);
 
-        btn_itemName.setOnClickListener(new View.OnClickListener() {
+        addToOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder alert = new AlertDialog.Builder(view.getContext());
@@ -62,6 +62,11 @@ public class ItemSelectedActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         Toast.makeText(view.getContext(),
                                 getResources().getString(R.string.added), Toast.LENGTH_LONG).show();
+                                //Intent item = new Intent();
+                                //item.putExtra("CurrItem", "Penis");
+                                //Put code here for adding order
+                                // getIntent();
+                                MainActivity.currentOrder.add(tempDonut);
                     }
                     //handle the "NO" click
                 }).setNegativeButton("no", new DialogInterface.OnClickListener() {

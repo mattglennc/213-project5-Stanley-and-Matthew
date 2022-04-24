@@ -69,6 +69,7 @@ public class OrderCoffee extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         Toast.makeText(view.getContext(),
                                 getResources().getString(R.string.added), Toast.LENGTH_LONG).show();
+                        MainActivity.currentOrder.add(tempCoffee);
                     }
                     //handle the "NO" click
                 }).setNegativeButton("no", new DialogInterface.OnClickListener() {
