@@ -16,6 +16,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputEditText;
 
+/**
+ * This OrderCoffee class provides functionality for activity_coffee.xml, allowing
+ * users to customize their coffee with various addons and order it.
+ *
+ * @author Matthew Carrascoso & Stanley Chou
+ */
 public class OrderCoffee extends AppCompatActivity {
 
     private CheckBox milkBox;
@@ -33,7 +39,12 @@ public class OrderCoffee extends AppCompatActivity {
     private TextInputEditText subtotalCoffee;
     private Coffee tempCoffee;
 
-
+    /**
+     * Get the references of all instances of Views defined in the layout file, gets all the information needed
+     * to place the selected coffee order on button click. Enables the coffee order to be customizable
+     *
+     * @param savedInstanceState saved state information of the model
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

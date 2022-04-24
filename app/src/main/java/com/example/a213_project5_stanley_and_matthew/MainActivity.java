@@ -6,7 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
-
+/**
+ * This MainActivity class holds StoreOrders and Order and acts as a way to interact with it between the other activities, and
+ * provides functionality for the activity_main.xml of the RU CAFE.  Private helper methods are included.
+ * onCreate() creates the StoreOrders and Order and starts its operation.
+ *
+ * @author Matthew Carrascoso & Stanley Chou
+ */
 
 public class MainActivity extends AppCompatActivity {
 

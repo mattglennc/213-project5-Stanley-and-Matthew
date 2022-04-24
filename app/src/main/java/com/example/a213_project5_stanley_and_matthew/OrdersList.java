@@ -13,15 +13,27 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-
+/**
+ * This OrdersList class provides functionality for activity_store.xml, allowing
+ * users to remove orders from the store and see their cost and contents
+ *
+ * @author Matthew Carrascoso & Stanley Chou
+ */
 public class OrdersList extends AppCompatActivity {
 
     private ListView ordersList;
     private ArrayList<String> orders;
     private StoreOrders allOrders;
     private static final DecimalFormat format = new DecimalFormat("0.00");
-    @Override
 
+    /**
+     * Get the references of all instances of Views defined in the layout file, retrieves the StoreOrders orders object
+     * from MainActivity and displays all the orders in the allOrders Listview, removes order from alloOders on click and
+     * displays the cost of every order
+     *
+     * @param savedInstanceState saved state information of the model
+     */
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store);
@@ -60,6 +72,12 @@ public class OrdersList extends AppCompatActivity {
         });
     }
 
+    /**
+     * Private helper method that when the orders displayed in the list view need to updated
+     * on order removal from the order or list initialization.Updates the orders that need to be displayed
+     *
+     * @return ArrayList<String> representation of all the orders now in the store.
+     */
     private ArrayList<String> setOrders(){
         int numOrders = this.allOrders.getNumOrders();
         ArrayList<String> items = new ArrayList<String>();

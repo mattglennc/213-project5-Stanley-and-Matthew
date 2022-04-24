@@ -17,10 +17,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.textfield.TextInputEditText;
 
 /**
- * For demonstration purpose, this class is the Activity to be started when an item on the
- * RecyclerView was clicked
- * Get the name of the item from an intent extra. The text of the button is set to the item name.
- * @author Lily Chang
+ * This itemSelectedActivity class provides functionality for activity_item_selected.xml, allowing
+ * users to place orders of Donut.  Private helper methods are included.
+ *
+ * @author Matthew Carrascoso & Stanley Chou
  */
 public class ItemSelectedActivity extends AppCompatActivity {
     private Button addToOrder;
@@ -31,7 +31,12 @@ public class ItemSelectedActivity extends AppCompatActivity {
     private TextInputEditText donutSubtotal;
     private Donut tempDonut;
 
-
+    /**
+     * Get the references of all instances of Views defined in the layout file, gets all the information needed
+     * to place donut order on button click.
+     *
+     * @param savedInstanceState saved state information of the model
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,10 +67,6 @@ public class ItemSelectedActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         Toast.makeText(view.getContext(),
                                 getResources().getString(R.string.added), Toast.LENGTH_LONG).show();
-                                //Intent item = new Intent();
-                                //item.putExtra("CurrItem", "Penis");
-                                //Put code here for adding order
-                                // getIntent();
                                 MainActivity.currentOrder.add(tempDonut);
                     }
                     //handle the "NO" click

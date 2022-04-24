@@ -12,7 +12,13 @@ import java.util.ArrayList;
 import androidx.appcompat.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
 import com.google.android.material.textfield.TextInputEditText;
-
+/**
+ * This CurrentOrder class provides functionality for activity_order.xml, allowing
+ * users to remove items from their order, see the cost, and finalize the order by sending it
+ * to the  store.
+ *
+ * @author Matthew Carrascoso & Stanley Chou
+ */
 public class CurrentOrder extends AppCompatActivity {
 
     private Button placeOrder;
@@ -24,6 +30,14 @@ public class CurrentOrder extends AppCompatActivity {
     private static final Double SALESTAX = .06625;
     private ArrayList<String> items;
 
+
+    /**
+     * Get the references of all instances of Views defined in the layout file, retrieves the current order
+     * from MainActivity and displays it in the ordersList Listview, removes item from order on click and
+     * sends order to the store on click, and displays the order cost before and after sales tax.
+     *
+     * @param savedInstanceState saved state information of the model
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,6 +84,11 @@ public class CurrentOrder extends AppCompatActivity {
             }
         });
     }
+
+    /**
+     * Private helper method that when the three cost values need to be updated
+     * Sets the Order costs to be displayed in the salesTax, subTotal, and total text fields.
+     */
     private void setCosts(){
         subtotal = findViewById(R.id.subtotal);
         salesTax = findViewById(R.id.salesTax);
@@ -85,6 +104,12 @@ public class CurrentOrder extends AppCompatActivity {
         total.setText(newTotal);
     }
 
+    /**
+     * Private helper method that when the items displayed in the list view needs to updated
+     * on item removal from the order or list initialization.Updates the items that need to be displayed
+     *
+     * @return ArrayList<String> representation of all the items now in the current order.
+     */
     private ArrayList<String> setItems(){
         int numItems = this.currentOrder.getNumItems();
         ArrayList<String> items = new ArrayList<String>();
