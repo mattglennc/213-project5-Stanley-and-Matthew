@@ -155,7 +155,7 @@ public class CurrentOrder extends AppCompatActivity {
     private ArrayList<String> setItems(){
         int numItems = this.currentOrder.getNumItems();
         ArrayList<String> items = new ArrayList<String>();
-        for (int i = 0; i<numItems; i++){
+        for (int i = 0; i < numItems; i++){
             items.add(this.currentOrder.getItem(i).toString());
         }
         setCosts();
