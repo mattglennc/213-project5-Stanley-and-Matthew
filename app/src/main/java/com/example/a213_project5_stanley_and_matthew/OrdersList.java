@@ -43,6 +43,14 @@ public class OrdersList extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,  this.orders);
         ordersList.setAdapter(adapter);
         ordersList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            /**
+             * onItemClick method which presents user with alert window to confirm the removal
+             * of order from list, confirming selection with toast message.
+             * @param parent AdapterView source of the selection.
+             * @param view View which is currently being accessed.
+             * @param position Position of selected Order.
+             * @param id Row id of selected Order.
+             */
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
@@ -51,6 +59,11 @@ public class OrdersList extends AppCompatActivity {
                 alert.setMessage(allOrders.getOrder(position).print());
                 //handle the "YES" click
                 alert.setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                    /**
+                     * onClick() listener for when user removes order.
+                     * @param dialog Dialog which received click.
+                     * @param which Button which was clicked.
+                     */
                     public void onClick(DialogInterface dialog, int which) {
                         Toast.makeText(view.getContext(),
                                 getResources().getString(R.string.orderRemoved), Toast.LENGTH_LONG).show();
@@ -61,6 +74,11 @@ public class OrdersList extends AppCompatActivity {
                     }
                     //handle the "NO" click
                 }).setNegativeButton("no", new DialogInterface.OnClickListener() {
+                    /**
+                     * onClick() listener for when order is not removed.
+                     * @param dialog Dialog which received click.
+                     * @param which Button which was clicked.
+                     */
                     public void onClick(DialogInterface dialog, int which) {
                         Toast.makeText(view.getContext(),
                                 getResources().getString(R.string.orderNotRemoved), Toast.LENGTH_LONG).show();

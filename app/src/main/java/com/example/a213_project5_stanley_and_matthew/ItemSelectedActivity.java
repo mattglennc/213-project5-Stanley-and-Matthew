@@ -57,6 +57,10 @@ public class ItemSelectedActivity extends AppCompatActivity {
         donutSubtotal.setText(price);
 
         addToOrder.setOnClickListener(new View.OnClickListener() {
+            /**
+             * onClick() listener to present alert window where user can confirm addition of item to order.
+             * @param view View currently in use.
+             */
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder alert = new AlertDialog.Builder(view.getContext());
@@ -64,6 +68,11 @@ public class ItemSelectedActivity extends AppCompatActivity {
                 alert.setMessage(tempDonut.toString());
                 //handle the "YES" click
                 alert.setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                    /**
+                     * onClick listener to add item to order.
+                     * @param dialog Dialog which received click.
+                     * @param which Button which was clicked.
+                     */
                     public void onClick(DialogInterface dialog, int which) {
                         Toast.makeText(view.getContext(),
                                 getResources().getString(R.string.added), Toast.LENGTH_LONG).show();
@@ -71,6 +80,11 @@ public class ItemSelectedActivity extends AppCompatActivity {
                     }
                     //handle the "NO" click
                 }).setNegativeButton("no", new DialogInterface.OnClickListener() {
+                    /**
+                     * onClick listener to not add item to order.
+                     * @param dialog Dialog which received click.
+                     * @param which Button which was clicked.
+                     */
                     public void onClick(DialogInterface dialog, int which) {
                         Toast.makeText(view.getContext(),
                                 getResources().getString(R.string.notAdded), Toast.LENGTH_LONG).show();
@@ -82,6 +96,13 @@ public class ItemSelectedActivity extends AppCompatActivity {
         });
 
         quantSelect.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            /**
+             * OnItemSelected listener corresponding to Donut quantity selected, updating the price.
+             * @param adapterView AdapterView source of the selection.
+             * @param view View which is currently being accessed.
+             * @param i Position of selected Item.
+             * @param l Row id of selected Item.
+             */
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 int quantity = Integer.parseInt(adapterView.getSelectedItem().toString());
@@ -90,6 +111,10 @@ public class ItemSelectedActivity extends AppCompatActivity {
                 donutSubtotal.setText(newPrice);
             }
 
+            /**
+             * OnItemSelected listener for when no quantity is selected.
+             * @param adapterView AdapterView source of click.
+             */
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
                 donutSubtotal.setText("");

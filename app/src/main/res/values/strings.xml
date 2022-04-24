@@ -10,6 +10,27 @@
     <string name="removeOrder">Cancel order?</string>
     <string name="orderRemoved">Order cancelled.</string>
     <string name="orderNotRemoved">Order not cancelled.</string>
+    <string name="removeItem">Remove item from order?</string>
+    <string name="itemRemoved">Item removed.</string>
+    <string name="itemNotRemoved">Item not removed.</string>
+    <string name="milk">milk</string>
+    <string name="cream">cream</string>
+    <string name="caramel">caramel</string>
+    <string name="syrup">syrup</string>
+    <string name="whipped_cream">whipped cream</string>
+    <string name="subtotal">subtotal</string>
+    <string name="addToOrder">Add to Order</string>
+    <string name="orderDonuts">Order Donuts</string>
+    <string name="textView">Text View</string>
+    <string name="donuts">DONUTS</string>
+    <string name="coffee">COFFEE</string>
+    <string name="order">  YOUR  ORDER</string>
+    <string name="store"> STORE ORDERS</string>
+    <string name="yo">Your Order</string>
+    <string name="salestax">sales tax</string>
+    <string name="total">total</string>
+    <string name="placeOrderButton">Place Order</string>
+    <string name="so">Store Orders</string>
     <string-array name="itemPrices">
         <item>1.59</item>
         <item>1.59</item>

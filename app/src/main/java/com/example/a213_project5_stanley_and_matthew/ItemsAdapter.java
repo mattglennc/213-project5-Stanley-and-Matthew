@@ -19,21 +19,19 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 /**
- * This is an Adapter class to be used to instantiate an adapter for the RecyclerView.
- * Must extend RecyclerView.Adapter, which will enforce you to implement 3 methods:
- *      1. onCreateViewHolder, 2. onBindViewHolder, and 3. getItemCount
- *
- * You must use the data type <thisClassName.yourHolderName>, in this example
- * <ItemAdapter.ItemHolder>. This will enforce you to define a constructor for the
- * ItemAdapter and an inner class ItemsHolder (a static class)
- * The ItemsHolder class must extend RecyclerView.ViewHolder. In the constructor of this class,
- * you do something similar to the onCreate() method in an Activity.
- * @author Lily Chang
+ * This Adapter class instantiates an adapter for the RecyclerView in the
+ * Donut view where each donut will be displayed with its price and the button to select it.
+ * @author Matthew Carrascoso & Stanley Cho
  */
 class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsHolder>{
     private Context context; //need the context to inflate the layout
     private ArrayList<com.example.a213_project5_stanley_and_matthew.Item> items; //need the data binding to each row of RecyclerView
 
+    /**
+     * Constructor to instantiate the adapter for the RecyclerView.
+     * @param context Context providing resources to this adapter.
+     * @param items List of items to use for the RecyclerView.
+     */
     public ItemsAdapter(Context context, ArrayList<com.example.a213_project5_stanley_and_matthew.Item> items) {
         this.context = context;
         this.items = items;
@@ -41,8 +39,8 @@ class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsHolder>{
 
     /**
      * This method will inflate the row layout for the items in the RecyclerView
-     * @param parent
-     * @param viewType
+     * @param parent ViewGroup being accessed here.
+     * @param viewType ViewType of this adapter.
      * @return
      */
     @NonNull
@@ -87,6 +85,10 @@ class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsHolder>{
         private Button btn_add;
         private ConstraintLayout parentLayout; //this is the row layout
 
+        /**
+         * Sets up the ItemsHolder with Donut name, price, and button to add the Donut to order.
+         * @param itemView itemView currently utilized by this adapter.
+         */
         public ItemsHolder(@NonNull View itemView) {
             super(itemView);
             tv_name = itemView.findViewById(R.id.tv_flavor);
@@ -105,7 +107,7 @@ class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsHolder>{
         /**
          * Set the onClickListener for the button on each row.
          * Clicking on the button will create an AlertDialog with the options of YES/NO.
-         * @param itemView
+         * @param itemView itemView being utilized by this adapter.
          */
         private void setAddButtonOnClick(@NonNull View itemView) {
             btn_add.setOnClickListener(new View.OnClickListener() {
@@ -114,7 +116,6 @@ class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsHolder>{
                     Intent intent = new Intent(itemView.getContext(), com.example.a213_project5_stanley_and_matthew.ItemSelectedActivity.class);
                     intent.putExtra("ITEM", tv_name.getText());
                     intent.putExtra("PRICE", tv_price.getText());
-                    System.out.println(im_item.getImageAlpha());
                     itemView.getContext().startActivity(intent);
                 }
             });

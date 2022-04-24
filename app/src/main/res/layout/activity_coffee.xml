@@ -26,7 +26,7 @@
             android:layout_width="131dp"
             android:layout_height="match_parent"
             android:buttonTint="#F4F0F0"
-            android:text="milk"
+            android:text="@string/milk"
             android:textSize="20sp"
             android:translationX="10sp" />
 
@@ -35,7 +35,7 @@
             android:layout_width="140dp"
             android:layout_height="match_parent"
             android:buttonTint="#F4F0F0"
-            android:text="cream"
+            android:text="@string/cream"
             android:textSize="20sp"
             android:translationX="10sp" />
 
@@ -44,7 +44,7 @@
             android:layout_width="117dp"
             android:layout_height="match_parent"
             android:buttonTint="#F4F0F0"
-            android:text="syrup"
+            android:text="@string/syrup"
             android:textSize="20sp"
             android:translationX="10sp" />
     </TableRow>
@@ -59,7 +59,7 @@
             android:layout_width="140dp"
             android:layout_height="match_parent"
             android:buttonTint="#F4F0F0"
-            android:text="caramel"
+            android:text="@string/caramel"
             android:textSize="20sp"
             android:translationX="10sp" />
 
@@ -68,7 +68,7 @@
             android:layout_width="131dp"
             android:layout_height="match_parent"
             android:buttonTint="#F4F0F0"
-            android:text="whipped cream"
+            android:text="@string/whipped_cream"
             android:textSize="20sp"
             android:translationX="10sp" />
     </TableRow>
@@ -130,14 +130,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:editable="false"
-                    android:hint="subtotal" />
+                    android:hint="@string/subtotal" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
                 android:id="@+id/orderCoffeeButton"
                 android:layout_width="158dp"
                 android:layout_height="51dp"
-                android:text="Add to Order"
+                android:text="@string/addToOrder"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.573"

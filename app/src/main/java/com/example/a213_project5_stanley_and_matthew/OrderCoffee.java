@@ -70,6 +70,11 @@ public class OrderCoffee extends AppCompatActivity {
         subtotalCoffee.setText(price);
 
         orderCoffeeButton.setOnClickListener(new View.OnClickListener() {
+            /**
+             * onClick() listener which presents alert window to confirm the addition of Coffee
+             * item to the current order.
+             * @param view View currently in use.
+             */
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder alert = new AlertDialog.Builder(view.getContext());
@@ -77,6 +82,11 @@ public class OrderCoffee extends AppCompatActivity {
                 alert.setMessage(tempCoffee.toString());
                 //handle the "YES" click
                 alert.setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                    /**
+                     * onClick listener for adding coffee to order.
+                     * @param dialog Dialog which received click.
+                     * @param which Button which was clicked.
+                     */
                     public void onClick(DialogInterface dialog, int which) {
                         Toast.makeText(view.getContext(),
                                 getResources().getString(R.string.added), Toast.LENGTH_LONG).show();
@@ -85,6 +95,11 @@ public class OrderCoffee extends AppCompatActivity {
                     }
                     //handle the "NO" click
                 }).setNegativeButton("no", new DialogInterface.OnClickListener() {
+                    /**
+                     * onClick listener for not adding coffee to order.
+                     * @param dialog Dialog which received click.
+                     * @param which Button which was clicked.
+                     */
                     public void onClick(DialogInterface dialog, int which) {
                         Toast.makeText(view.getContext(),
                                 getResources().getString(R.string.notAdded), Toast.LENGTH_LONG).show();
@@ -96,6 +111,13 @@ public class OrderCoffee extends AppCompatActivity {
         });
 
         quantSelect.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            /**
+             * OnItemSelected listener corresponding to Coffee quantity selected, updating price.
+             * @param adapterView AdapterView source of the selection.
+             * @param view View which is currently being accessed.
+             * @param i Position of selected Size.
+             * @param l Row id of selected Size.
+             */
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 int quantity = Integer.parseInt(adapterView.getSelectedItem().toString());
@@ -104,6 +126,10 @@ public class OrderCoffee extends AppCompatActivity {
                 subtotalCoffee.setText(newPrice);
             }
 
+            /**
+             * OnItemSelected listener for when no quantity is selected.
+             * @param adapterView AdapterView source of selection.
+             */
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
                 subtotalCoffee.setText("");
@@ -111,6 +137,14 @@ public class OrderCoffee extends AppCompatActivity {
         });
 
         sizeSelect.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            /**
+             * OnItemSelected listener corresponding to Coffee size selected, updating price.
+             * @param adapterView AdapterView source of the selection.
+             * @param view View which is currently being accessed.
+             * @param i Position of selected Size.
+             * @param l Row id of selected Size.
+             */
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String size = adapterView.getSelectedItem().toString();
@@ -120,6 +154,10 @@ public class OrderCoffee extends AppCompatActivity {
 
             }
 
+            /**
+             * OnItemSelected listener for when no size is selected.
+             * @param adapterView AdapterView source of selection.
+             */
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
                 subtotalCoffee.setText("");
@@ -127,6 +165,11 @@ public class OrderCoffee extends AppCompatActivity {
         });
 
         milkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            /**
+             * On check changed listener for when milk add-in is checked, updating price.
+             * @param compoundButton CheckBox being checked.
+             * @param b Checked state of CheckBox.
+             */
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 boolean milkChecked = compoundButton.isChecked();
@@ -141,6 +184,11 @@ public class OrderCoffee extends AppCompatActivity {
         });
 
         creamBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            /**
+             * On check changed listener for when cream add-in is checked, updating price.
+             * @param compoundButton CheckBox being checked.
+             * @param b Checked state of CheckBox.
+             */
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 boolean creamChecked = compoundButton.isChecked();
@@ -155,6 +203,11 @@ public class OrderCoffee extends AppCompatActivity {
         });
 
         syrupBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            /**
+             * On check changed listener for when syrup add-in is checked, updating price.
+             * @param compoundButton CheckBox being checked.
+             * @param b Checked state of CheckBox.
+             */
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 boolean syrupChecked = compoundButton.isChecked();
@@ -169,6 +222,11 @@ public class OrderCoffee extends AppCompatActivity {
         });
 
         caramelBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            /**
+             * On check changed listener for when caramel add-in is checked, updating price.
+             * @param compoundButton CheckBox being checked.
+             * @param b Checked state of CheckBox.
+             */
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 boolean caramelChecked = compoundButton.isChecked();
@@ -183,6 +241,11 @@ public class OrderCoffee extends AppCompatActivity {
         });
 
         wcBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            /**
+             * On check changed listener for when whipped cream add-in is checked, updating price.
+             * @param compoundButton CheckBox being checked.
+             * @param b Checked state of CheckBox.
+             */
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 boolean wcChecked = compoundButton.isChecked();

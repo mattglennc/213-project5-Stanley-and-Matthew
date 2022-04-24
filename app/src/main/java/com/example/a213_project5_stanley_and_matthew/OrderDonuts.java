@@ -8,6 +8,13 @@ import android.os.Bundle;
 
 import java.util.ArrayList;
 
+/**
+ * This OrderDonuts class provides functionality for activity_donut.xml, allowing
+ * users to select donuts to add to their order.
+ *
+ * @author Matthew Carrascoso & Stanley Chou
+ */
+
 public class OrderDonuts extends AppCompatActivity {
     private ArrayList<Item> items = new ArrayList<>();
 

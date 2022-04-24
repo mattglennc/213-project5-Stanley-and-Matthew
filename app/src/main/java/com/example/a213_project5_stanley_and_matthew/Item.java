@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 /**
  * This class defines the data structure of an item to be displayed in the RecyclerView
- * @author Lily Chang
+ * @author Matthew Carrascoso & Stanley Cho
  */
 public class Item implements Serializable {
 	private String itemName;
@@ -13,9 +13,9 @@ public class Item implements Serializable {
 
 	/**
 	 * Parameterized constructor.
-	 * @param itemName
-	 * @param image
-	 * @param unitPrice
+	 * @param itemName Name of the item.
+	 * @param image Image displayed for the item.
+	 * @param unitPrice Price of the item.
 	 */
 	public Item(String itemName, int image, String unitPrice) {
 		this.itemName = itemName;

@@ -53,6 +53,11 @@ public class CurrentOrder extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,  this.items);
         ordersList.setAdapter(adapter);
         placeOrder.setOnClickListener(new View.OnClickListener() {
+            /**
+             * onClick() method to present alert window if user tries to place empty order, otherwise
+             * place order and confirm with toast message.
+             * @param view View which is currently being accessed.
+             */
             @Override
             public void onClick(View view) {
                 if(items.size() == 0){
@@ -73,14 +78,51 @@ public class CurrentOrder extends AppCompatActivity {
             }
         });
         ordersList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            /**
+             * onItemClick method which presents user with alert window to confirm the removal
+             * of menu item from order, confirming selection with toast message.
+             * @param parent AdapterView source of the click.
+             * @param view View which is currently being accessed.
+             * @param position Position of selected Item.
+             * @param id Row id of selected Item.
+             */
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-                MenuItem remove = currentOrder.getMenuItem(position);
-                currentOrder.remove(remove);
-                items.remove(position);
-                setCosts();
-                adapter.notifyDataSetChanged();
+                AlertDialog.Builder alert = new AlertDialog.Builder(view.getContext());
+                alert.setTitle(getResources().getString(R.string.removeItem));
+                alert.setMessage(currentOrder.getMenuItem(position).toString());
+                //handle the "YES" click
+                alert.setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                    /**
+                     * onClick() listener for when user removes item, updating price.
+                     * @param dialog Dialog which received click.
+                     * @param which Button which was clicked.
+                     */
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(view.getContext(),
+                                getResources().getString(R.string.itemRemoved), Toast.LENGTH_LONG).show();
+                        MenuItem remove = currentOrder.getMenuItem(position);
+                        currentOrder.remove(remove);
+                        items.remove(position);
+                        setCosts();
+                        adapter.notifyDataSetChanged();
+                    }
+                    //handle the "NO" click
+                }).setNegativeButton("no", new DialogInterface.OnClickListener() {
+                    /**
+                     * onClick() listener for when user does not remove item.
+                     *
+                     * @param dialog Dialog which received click.
+                     * @param which Button which was clicked.
+                     */
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(view.getContext(),
+                                getResources().getString(R.string.itemNotRemoved), Toast.LENGTH_LONG).show();
+                    }
+                });
+                AlertDialog dialog = alert.create();
+                dialog.show();
             }
         });
     }

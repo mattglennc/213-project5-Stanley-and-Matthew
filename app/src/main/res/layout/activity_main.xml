@@ -43,20 +43,20 @@
             android:layout_height="57dp">
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/textViewDonut"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-medium"
-                android:text="DONUTS"
+                android:text="@string/donuts"
                 android:textSize="35sp"
                 android:translationX="35sp" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/textViewCoffee"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-medium"
-                android:text="COFFEE"
+                android:text="@string/coffee"
                 android:textSize="35sp"
                 android:translationX="105sp" />
 
@@ -94,23 +94,24 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView2"
-                android:layout_width="122dp"
+                android:id="@+id/textViewOrder"
+                android:layout_width="135dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-medium"
-                android:text=" YOUR  ORDER"
+                android:text="@string/order"
+                android:textAlignment="center"
                 android:textSize="35sp"
-                android:translationX="50dp" />
+                android:translationX="35sp" />
 
             <TextView
-                android:id="@+id/textView"
-                android:layout_width="146dp"
+                android:id="@+id/textViewCoffee3"
+                android:layout_width="135dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-medium"
-                android:text=" STORE ORDERS"
+                android:text="@string/store"
+                android:textAlignment="center"
                 android:textSize="35sp"
-                android:translationX="116sp" />
-
+                android:translationX="105sp" />
         </TableRow>
 
     </LinearLayout>

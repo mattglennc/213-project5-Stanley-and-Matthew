@@ -38,21 +38,37 @@ public class MainActivity extends AppCompatActivity {
         this.currentOrder = new Order();
     }
 
+    /**
+     * Event listener that opens the donut view when image is clicked.
+     * @param view View which is currently being accessed.
+     */
     public void donutActivity(View view){
         Intent donutIntent = new Intent(this, OrderDonuts.class);
         startActivity(donutIntent);
     }
 
+    /**
+     * Event listener that opens the coffee view when image is clicked.
+     * @param view View which is currently being accessed.
+     */
     public void coffeeActivity(View view){
         Intent coffeeIntent = new Intent(this, OrderCoffee.class);
         startActivity(coffeeIntent);
     }
 
+    /**
+     * Event listener that opens the order view when image is clicked.
+     * @param view View which is currently being accessed.
+     */
     public void orderActivity(View view){
         Intent orderIntent = new Intent(this, CurrentOrder.class);
         startActivity(orderIntent);
     }
 
+    /**
+     * Event listener that opens the store orders view when image is clicked.
+     * @param view View which is currently being accessed.
+     */
     public void storeActivity(View view){
         Intent storeIntent = new Intent(this, OrdersList.class);
         startActivity(storeIntent);
