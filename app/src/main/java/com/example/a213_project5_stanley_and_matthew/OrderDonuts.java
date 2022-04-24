@@ -20,7 +20,8 @@ public class OrderDonuts extends AppCompatActivity {
     /**
      * Get the references of all instances of Views defined in the layout file, set up the list of
      * items to be display in the RecyclerView.
-     * @param savedInstanceState
+     *
+     * @param savedInstanceState saved state information of the model
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {

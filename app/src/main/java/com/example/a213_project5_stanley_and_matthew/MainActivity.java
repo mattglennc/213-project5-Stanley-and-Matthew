@@ -20,6 +20,12 @@ public class MainActivity extends AppCompatActivity {
     public static StoreOrders orders;
     public static Order currentOrder;
 
+    /**
+     * Get the references of all instances of Views defined in the layout file, initializes the orders
+     * and current Order. Sets up the layout for the applications main menu.
+     *
+     * @param savedInstanceState saved state information of the model
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
