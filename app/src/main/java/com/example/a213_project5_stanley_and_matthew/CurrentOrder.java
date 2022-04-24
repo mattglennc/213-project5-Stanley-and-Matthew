@@ -1,5 +1,7 @@
 package com.example.a213_project5_stanley_and_matthew;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -39,13 +41,21 @@ public class CurrentOrder extends AppCompatActivity {
         placeOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(),
-                        getResources().getString(R.string.placeOrder), Toast.LENGTH_LONG).show();
-                MainActivity.orders.add(currentOrder);
-                MainActivity.currentOrder = new Order();
-                items.clear();
-                setCosts();
-                adapter.notifyDataSetChanged();
+                if(items.size() == 0){
+                    AlertDialog.Builder alert = new AlertDialog.Builder(view.getContext());
+                    alert.setTitle(getResources().getString(R.string.emptyOrder));
+                    alert.setMessage(getResources().getString(R.string.emptyMessage));
+                    AlertDialog dialog = alert.create();
+                    dialog.show();
+                }else{
+                    Toast.makeText(view.getContext(),
+                            getResources().getString(R.string.placeOrder), Toast.LENGTH_LONG).show();
+                    MainActivity.orders.add(currentOrder);
+                    MainActivity.currentOrder = new Order();
+                    items.clear();
+                    setCosts();
+                    adapter.notifyDataSetChanged();
+                }
             }
         });
         ordersList.setOnItemClickListener(new AdapterView.OnItemClickListener() {

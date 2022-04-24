@@ -5,6 +5,11 @@
     <string name="notAdded">Item not added to order.</string>
     <string name="addPrompt">Add item to order?</string>
     <string name="placeOrder">Order has been placed.</string>
+    <string name="emptyOrder">Your current order is empty.</string>
+    <string name="emptyMessage">Add items to place order.</string>
+    <string name="removeOrder">Cancel order?</string>
+    <string name="orderRemoved">Order cancelled.</string>
+    <string name="orderNotRemoved">Order not cancelled.</string>
     <string-array name="itemPrices">
         <item>1.59</item>
         <item>1.59</item>

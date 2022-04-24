@@ -1,5 +1,7 @@
 package com.example.a213_project5_stanley_and_matthew;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -32,12 +34,28 @@ public class OrdersList extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-                Toast.makeText(view.getContext(),
-                        "Order Removed from the Store", Toast.LENGTH_LONG).show();
-                Order remove = allOrders.getOrder(position);
-                allOrders.remove(remove);
-                orders.remove(position);
-                adapter.notifyDataSetChanged();
+                AlertDialog.Builder alert = new AlertDialog.Builder(view.getContext());
+                alert.setTitle(getResources().getString(R.string.removeOrder));
+                alert.setMessage(allOrders.getOrder(position).print());
+                //handle the "YES" click
+                alert.setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(view.getContext(),
+                                getResources().getString(R.string.orderRemoved), Toast.LENGTH_LONG).show();
+                        Order remove = allOrders.getOrder(position);
+                        allOrders.remove(remove);
+                        orders.remove(position);
+                        adapter.notifyDataSetChanged();
+                    }
+                    //handle the "NO" click
+                }).setNegativeButton("no", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(view.getContext(),
+                                getResources().getString(R.string.orderNotRemoved), Toast.LENGTH_LONG).show();
+                    }
+                });
+                AlertDialog dialog = alert.create();
+                dialog.show();
             }
         });
     }
